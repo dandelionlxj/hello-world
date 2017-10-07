@@ -3,3 +3,52 @@
 来
 哈哈
 好像可以，再来
+试写一算法，在带头结点单链表L插入第i元素e，带头结点单链表的类型定义为：
+Typedef struct LNode{
+Teletyped  data;
+Struct  Lnode*next;
+}Lnode,*LinkList;
+Int ListLength_L(LinkList L)
+/*求带头结点单链表L的长度，并返回长度值。
+/*若L不是带头结点单链表，则返回-1.
+{
+ if(L==null)return -1;
+if(L->next==null)return 0;
+int i=0;
+LinkList temp;
+temp=L;
+do{
+temp=temp->next;
+i++;
+}while(temp->next!=null);
+return i;
+}
+
+  LinkList geti_1(LinkList L,int i)
+/*在带头结点单链表找到第i-1个 元素节点的地址
+  {
+  LinkList temp;
+  temp=L;
+  int j=0;
+  while(j<i-1){
+  temp=temp->next;
+  j++;
+  }
+  return temp;
+  }
+
+
+Status Insert_L(LinkList L, int i, ElemType e)
+/* 在带头结点单链表L插入第i元素e，并返回OK。*/
+/* 若参数不合理，则返回ERROR。              */
+{
+if(i==0||ListLength_L(L)<i-1)return ERROR;
+int j=0;
+LinkList temp,newlode;
+temp=geti_1(L,i);
+newlode=(LNode*)malloc(sizeof(LNode));
+newlode->data=e;
+newlode->next= temp->next;
+temp->next=newlode;
+return OK;
+}
