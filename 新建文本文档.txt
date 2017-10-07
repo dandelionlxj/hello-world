@@ -1,8 +1,3 @@
-这个应该可以吧
-试试看
-来
-哈哈
-好像可以，再来
 试写一算法，在带头结点单链表L插入第i元素e，带头结点单链表的类型定义为：
 Typedef struct LNode{
 Teletyped  data;
